@@ -1,5 +1,6 @@
-const derrotasVitorias = function (derrota, vitoria, rank) {
-    return derrota - vitoria
+const derrotasVitorias = function (vitoria, derrota) {
+    let saldo = vitoria - derrota
+    let rank
 
     if (vitoria < 10) {
         rank = 'Ferro'
@@ -13,10 +14,10 @@ const derrotasVitorias = function (derrota, vitoria, rank) {
         rank = 'Diamante'
     } else if (vitoria >= 91 && vitoria <= 100) {
         rank = 'Lendário'
-    } else (vitoria >= 101)
+    } else {
     rank = 'Imortal'
+    }
+    console.log(`O Herói tem saldo de ${saldo} e está no ranking ${rank}`)
 }
 
-let resultado = derrotasVitorias(50, 25)
-
-console.log(resultado)
+let resultado = derrotasVitorias(500, 230)
